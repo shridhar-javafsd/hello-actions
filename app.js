@@ -1,14 +1,12 @@
-import express from 'express';
-
+const express = require('express');
 const app = express();
-const PORT = 3000;
 
 app.get('/', (req, res) => {
-    res.send('Hello from GitHub Actions CI/CD! 123');
+    res.send('Hello from Jenkins CI/CD! 123456789');
 });
 
-export default app;
+module.exports = app;
 
 if (require.main === module) {
-    app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+    app.listen(3000, () => console.log('Server running on port 3000'));
 }
