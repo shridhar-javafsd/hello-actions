@@ -1,235 +1,184 @@
 # Core Java — Complete Courseware
 
-> **Original Author:** Vaman Deshmukh
-> **Revised & Modernized:** 2024–25
-> **Baseline:** Java 8 (LTS) · Modern features covered separately through Java 24
+> **Author:** Vaman Deshmukh &nbsp;|&nbsp; **Revised:** 2024–25
+> **Java 8 baseline · Modern features (Java 11 → 24) covered separately**
 
 ---
 
-## About This Courseware
+## What Is This?
 
-This courseware is written for developers who are new to Java or are refreshing their fundamentals before moving into frameworks like Spring Boot. It assumes no prior Java knowledge but does assume basic programming awareness (variables, loops, functions from any language).
+A complete, from-scratch Java courseware. Each file covers **one topic**, goes deep enough to be useful, and stops before it gets boring.
 
-**Design principles of this material:**
-
-- Java 8 is the baseline. Every feature taught here is available in Java 8+.
-- Code examples use an **Employee / Department / Project** domain consistently across all modules — no toy `foo/bar` examples.
-- Names used in examples: **Sonu, Monu, Tonu, Ponu, Gonu** — so you actually remember them.
-- Modern Java features (Java 11, 13/14, 17, 21, 24) are covered in dedicated standalone files at the end — clearly separated, not mixed in.
-- GUI (AWT/Swing) is not covered. Participants are expected to progress to Spring Boot REST APIs, not desktop applications.
-- Each file is self-contained for a single topic so you can jump to what you need.
+- **No fluff.** Every section earns its place.
+- **Consistent examples.** All code uses an Employee/Department/Project domain. Names used: Sonu, Monu, Tonu, Ponu, Gonu.
+- **Java 8 baseline.** Everything in Parts A–H compiles on any JDK 8+. Modern Java features are in Part I as dedicated files — clean separation, no mixing.
+- **Self-contained files.** Pick any topic and jump in. You don't need to read everything in order (though the first time, you should).
 
 ---
 
-## Prerequisites
+## The Modules
 
-- Basic understanding of what a program is (any language is fine)
-- JDK 8 or higher installed (JDK 17 or 21 LTS recommended for setup)
-- An IDE: IntelliJ IDEA Community Edition (recommended) or Eclipse
-- No prior Java knowledge needed
+### Part A — Getting Started
 
----
-
-## Courseware Structure
-
-The material is organized into **thematic modules**. Each module is one `.md` file covering one major topic. Work through them top to bottom for the first time.
+| # | File | What's Inside |
+|---|------|---------------|
+| 01 | `01_Introduction_and_Setup.md` | What Java is, JDK vs JRE vs JVM, installing JDK, first program, how `.java` → `.class` → output works |
+| 02 | `02_JVM_Architecture.md` | Class loading, runtime memory areas (heap, stack, method area), JIT compiler — understanding what happens under the hood |
 
 ---
 
-### Part A — Foundations
+### Part B — Language Fundamentals
 
-| # | File | Topic |
-|---|------|-------|
-| 01 | `01_Introduction_and_Setup.md` | What is Java, JDK/JRE/JVM, WORA, Installing JDK, First Program, How Java code runs |
-| 02 | `02_Datatypes_Variables_Operators.md` | Primitive types, Literals, Variables, Type casting & promotion, Wrapper classes, Autoboxing, Operators & assignments |
-| 03 | `03_Flow_Control.md` | if/else, switch (classic + arrow), while, do-while, for, for-each, break, continue, labeled statements |
-| 04 | `04_Arrays.md` | 1D arrays, 2D arrays, java.util.Arrays, for-each with arrays, common pitfalls |
-
----
-
-### Part B — Object-Oriented Programming
-
-| # | File | Topic |
-|---|------|-------|
-| 05 | `05_Classes_Objects_and_Members.md` | Classes, Objects, Fields, Methods, Static vs Non-static members, execution flow, blocks, constructors, `this` |
-| 06 | `06_Access_Modifiers_and_Packages.md` | private, default, protected, public — with rules; Packages, import, FQN, subpackages |
-| 07 | `07_Inheritance.md` | extends, super, constructor chaining, method overriding, @Override, final, types of inheritance |
-| 08 | `08_Polymorphism.md` | Compile-time (overloading) vs Runtime (dynamic dispatch), instanceof, upcasting, downcasting |
-| 09 | `09_Abstraction.md` | abstract classes, interfaces, default/static methods in interfaces (Java 8), abstract class vs interface |
-| 10 | `10_Encapsulation.md` | Data hiding with private fields, getters/setters, immutable classes, JavaBeans convention |
+| # | File | What's Inside |
+|---|------|---------------|
+| 03 | `03_Datatypes_Variables_and_Operators.md` | Primitive types, literals, variables, type casting & promotion, operators, assignments, operator precedence |
+| 04 | `04_Wrapper_Classes.md` | Integer, Double, Character etc., autoboxing & unboxing, when and why wrappers matter |
+| 05 | `05_Flow_Control.md` | if/else, switch, while, do-while, for, for-each, break, continue — with real decision-making examples |
+| 06 | `06_Arrays.md` | 1D and 2D arrays, default values, iterating, `java.util.Arrays`, common mistakes |
+| 07 | `07_String_Handling.md` | String immutability, String pool, 40+ String methods, StringBuilder, StringBuffer, comparison and when to use what |
 
 ---
 
-### Part C — Core Java Topics
+### Part C — Object-Oriented Programming
 
-| # | File | Topic |
-|---|------|-------|
-| 11 | `11_String_Handling.md` | String immutability, String pool, String methods, StringBuilder, StringBuffer, String vs StringBuilder vs StringBuffer, common patterns |
-| 12 | `12_Object_Class_Methods.md` | toString(), equals(), hashCode(), clone(), wait()/notify()/notifyAll(), finalize() (deprecated note) |
-| 13 | `13_Exception_Handling.md` | Exception hierarchy, checked vs unchecked, try-catch-finally, multi-catch, try-with-resources, throw/throws, custom exceptions, assertions |
-| 14 | `14_Inner_Classes.md` | Regular inner class, static nested class, method-local inner class, anonymous inner class, comparison with lambdas |
-| 15 | `15_Enums.md` | Basic enums, enum with fields and methods, enum in switch, EnumSet, EnumMap, best practices |
-
----
-
-### Part D — Java 8 Features
-
-| # | File | Topic |
-|---|------|-------|
-| 16 | `16_Lambda_Expressions.md` | Anonymous functions, lambda syntax, evolution from anonymous class, method references (4 types) |
-| 17 | `17_Functional_Interfaces.md` | @FunctionalInterface, Runnable, Supplier, Consumer, Function, Predicate, BiFunction, composition |
-| 18 | `18_Stream_API.md` | Stream pipeline, creation, intermediate ops (filter, map, flatMap, sorted, distinct, limit, skip), terminal ops (collect, count, reduce, findFirst, anyMatch, forEach), Collectors, parallel streams |
-| 19 | `19_Optional.md` | The null problem, Optional creation, isPresent/ifPresent, map/flatMap/filter, orElse/orElseGet/orElseThrow |
+| # | File | What's Inside |
+|---|------|---------------|
+| 08 | `08_Classes_and_Objects.md` | Class anatomy, objects, fields, methods, constructors, `this`, static vs non-static members, blocks, execution order |
+| 09 | `09_Access_Modifiers_and_Packages.md` | private / default / protected / public — rules and reasoning; packages, import, FQN, naming conventions |
+| 10 | `10_Inheritance.md` | extends, super, constructor chaining, method overriding, `@Override`, `final`, types of inheritance, IS-A vs HAS-A |
+| 11 | `11_Polymorphism.md` | Overloading (compile-time) vs overriding (runtime), dynamic dispatch, upcasting, downcasting, instanceof |
+| 12 | `12_Abstraction.md` | abstract classes, interfaces, Java 8 default & static methods in interfaces, abstract class vs interface — decision guide |
+| 13 | `13_Encapsulation.md` | Private fields + getters/setters, why it matters, immutable classes, JavaBeans pattern |
 
 ---
 
-### Part E — Concurrency
+### Part D — Core Java Toolkit
 
-| # | File | Topic |
-|---|------|-------|
-| 20 | `20_Multithreading.md` | Thread vs Runnable, thread lifecycle, sleep/join/interrupt, thread priorities, daemon threads, synchronization, race conditions, synchronized keyword |
-| 21 | `21_Executor_Framework.md` | Why ExecutorService over raw Thread, Executors factory methods, submit vs execute, Callable, Future, ScheduledExecutorService, CompletableFuture basics, concurrent collections |
-
----
-
-### Part F — I/O and Collections
-
-| # | File | Topic |
-|---|------|-------|
-| 22 | `22_IO_Streams.md` | Byte streams, character streams, buffered streams, data streams, try-with-resources, java.nio.file (Path, Files), reading/writing files, serialization & transient |
-| 23 | `23_Collections_and_Generics.md` | Collection hierarchy, List (ArrayList, LinkedList), Set (HashSet, LinkedHashSet, TreeSet), Queue/Deque, Map (HashMap, LinkedHashMap, TreeMap), Generics, Collections utility class, Java 9 factory methods |
+| # | File | What's Inside |
+|---|------|---------------|
+| 14 | `14_Object_Class_Methods.md` | toString(), equals(), hashCode() contract, clone(), wait()/notify(), finalize() — what each does and when to override |
+| 15 | `15_Inner_Classes.md` | Regular inner, static nested, method-local, anonymous — all four types with use cases; how lambdas replaced anonymous classes |
+| 16 | `16_Enums.md` | Basic enums, enums with fields & methods, switch on enum, EnumSet, EnumMap, why enums beat int/String constants |
+| 17 | `17_Exception_Handling.md` | Exception hierarchy, checked vs unchecked, try-catch-finally, multi-catch, try-with-resources, throw/throws, custom exceptions, assertions |
+| 18 | `18_Annotations.md` | What annotations are and why they exist, built-in annotations, meta-annotations, writing custom annotations, reading with Reflection |
 
 ---
 
-### Part G — Advanced Topics
+### Part E — Java 8 Features
 
-| # | File | Topic |
-|---|------|-------|
-| 24 | `24_Annotations.md` | What are annotations, built-in annotations (@Override, @Deprecated, @SuppressWarnings), meta-annotations (@Retention, @Target, @Documented, @Inherited), custom annotations, reading with Reflection |
-| 25 | `25_JVM_Architecture.md` | Class loading, runtime data areas (method area, heap, stack, PC register, native stack), JIT compiler, Garbage Collection — types and algorithms, GC tuning basics |
-| 26 | `26_Garbage_Collection_and_Object_Lifecycle.md` | Object creation to collection, strong/soft/weak/phantom references, GC eligibility, finalize() (deprecated), try-with-resources as the modern pattern, G1/ZGC/Shenandoah overview |
-
----
-
-### Part H — Modern Java (Post Java 8)
-
-| # | File | Topic |
-|---|------|-------|
-| 27 | `27_Java11_Features.md` | String methods (strip, isBlank, repeat, lines), Files.readString/writeString, var in lambdas, HttpClient API, running single-file programs |
-| 28 | `28_Java13_14_Features.md` | Text blocks (Java 13 preview / 14 standard), switch expressions (arrow syntax, yield), helpful NullPointerException messages |
-| 29 | `29_Java17_Features.md` | Sealed classes and interfaces, records, pattern matching instanceof, strong encapsulation of JDK internals |
-| 30 | `30_Java21_Features.md` | Virtual threads (Project Loom), record patterns, pattern matching in switch, sequenced collections, structured concurrency (preview) |
-| 31 | `31_Java24_Features.md` | Finalized features from Loom and Valhalla, primitive types in patterns, stable virtual threads, other notable changes |
+| # | File | What's Inside |
+|---|------|---------------|
+| 19 | `19_Lambda_Expressions.md` | What lambdas are, syntax variations, evolution from anonymous class → lambda, method references (all 4 types) |
+| 20 | `20_Functional_Interfaces.md` | @FunctionalInterface, Runnable, Supplier, Consumer, Function, Predicate, BiFunction — with composition examples |
+| 21 | `21_Stream_API.md` | Stream pipeline, lazy evaluation, intermediate ops (filter/map/flatMap/sorted/distinct/limit), terminal ops (collect/reduce/count/findFirst/anyMatch), Collectors, parallel streams |
+| 22 | `22_Optional.md` | The null problem, Optional creation, map/flatMap/filter, orElse/orElseGet/orElseThrow — eliminating NPEs cleanly |
 
 ---
 
-### Part I — Interview Preparation
+### Part F — Concurrency
 
-| # | File | Topic |
-|---|------|-------|
-| 32 | `32_Interview_Questions.md` | Curated questions by topic — Foundations, OOP, Collections, Java 8, Concurrency, JVM, String, Exceptions — with concise answers |
+| # | File | What's Inside |
+|---|------|---------------|
+| 23 | `23_Multithreading.md` | Thread vs Runnable, thread lifecycle, sleep/join/interrupt, priorities, daemon threads, synchronization, race conditions, `synchronized` |
+| 24 | `24_Executor_Framework.md` | Why ExecutorService over raw threads, thread pool types, execute vs submit, Callable & Future, ScheduledExecutorService, CompletableFuture, concurrent collections |
 
 ---
 
-## Recommended Learning Path
+### Part G — I/O and Collections
+
+| # | File | What's Inside |
+|---|------|---------------|
+| 25 | `25_IO_Streams.md` | Byte streams, character streams, buffered streams, try-with-resources pattern, java.nio.file (Path, Files), serialization & `transient` |
+| 26 | `26_Collections_and_Generics.md` | Full collection hierarchy, List/Set/Queue/Map implementations with comparison, Generics (why, how, bounded types), Collections utility class, Java 9 factory methods |
+
+---
+
+### Part H — Memory and Object Lifecycle
+
+| # | File | What's Inside |
+|---|------|---------------|
+| 27 | `27_Garbage_Collection.md` | Object lifecycle, GC eligibility, strong/soft/weak/phantom references, GC algorithms (Serial, G1, ZGC), what you can and can't control |
+
+---
+
+### Part I — Modern Java
+
+Each file here is standalone. Read whichever version is relevant to you.
+
+| # | File | What's Inside |
+|---|------|---------------|
+| 28 | `28_Java11_Features.md` | String API additions, Files.readString/writeString, `var` in lambda params, HttpClient API, running single-file programs |
+| 29 | `29_Java13_14_Features.md` | Text blocks, switch expressions (arrow syntax + `yield`), helpful NullPointerExceptions |
+| 30 | `30_Java17_Features.md` | Records, sealed classes & interfaces, pattern matching for instanceof |
+| 31 | `31_Java21_Features.md` | Virtual threads (Project Loom), record patterns, pattern matching in switch, sequenced collections |
+| 32 | `32_Java24_Features.md` | Finalized virtual thread features, primitive types in patterns, structured concurrency, other stable additions |
+
+---
+
+## Suggested Learning Order
+
+If you're going cover to cover, this is the sequence:
 
 ```
-Week 1    Modules 01–04     Foundations — syntax, types, control flow, arrays
-Week 2    Modules 05–06     Classes, objects, static/non-static, packages
-Week 3    Modules 07–10     OOP pillars — inheritance, polymorphism, abstraction, encapsulation
-Week 4    Modules 11–15     Strings, Object class, exceptions, inner classes, enums
-Week 5    Modules 16–19     Java 8 — lambdas, functional interfaces, streams, Optional
-Week 6    Modules 20–21     Concurrency — threads and executor framework
-Week 7    Modules 22–23     I/O and collections
-Week 8    Modules 24–26     Annotations, JVM, garbage collection
-Week 9    Modules 27–31     Modern Java (11 through 24) — read as a series
-Week 10   Module 32         Interview preparation and revision
+01 → 02 → 03 → 04 → 05 → 06 → 07    (setup + fundamentals)
+08 → 09 → 10 → 11 → 12 → 13          (OOP)
+14 → 15 → 16 → 17 → 18               (core toolkit)
+19 → 20 → 21 → 22                     (Java 8 features)
+23 → 24                               (concurrency)
+25 → 26                               (I/O + collections)
+27                                     (GC + memory)
+28 → 29 → 30 → 31 → 32               (modern Java — pick what you need)
 ```
 
-> You do not need to finish all modern Java modules before moving to Spring Boot.
-> Weeks 1–8 (Modules 01–23) are sufficient for a Spring Boot beginner course.
-> Modules 24–31 can be done in parallel or after.
+**In a hurry?** Modules 01–26 cover everything you need for most Java roles. Modules 27–32 are for completeness and interviews.
 
 ---
 
-## Coding Style Used in This Courseware
-
-All code examples follow these conventions:
+## Code Style Used Throughout
 
 ```
-Domain:      Employee Management — Employee, Department, Project, Job
-Names:       Sonu, Monu, Tonu, Ponu, Gonu
-Packages:    com.ems.bean, com.ems.service, com.ems.util
-Constants:   MAX_SALARY, DEFAULT_DEPT
-Java style:  Standard Oracle conventions (camelCase methods, PascalCase classes, UPPER_SNAKE constants)
+Domain      :  Employee, Department, Project, Job
+Names       :  Sonu, Monu, Tonu, Ponu, Gonu
+Packages    :  com.ems.bean / com.ems.service / com.ems.util
 ```
 
-Example of what to expect:
+Quick example of what every file's code will look like:
 
 ```java
-package com.ems.bean;
-
-public class Employee {
-    private int id;
-    private String name;
-    private double salary;
-    private String department;
-
-    public Employee(int id, String name, double salary, String department) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-        this.department = department;
-    }
-
-    // getters, setters, toString ...
-}
-
-// Usage — in main or a service class
-Employee e1 = new Employee(101, "Sonu",  75000, "Engineering");
-Employee e2 = new Employee(102, "Monu",  82000, "Engineering");
-Employee e3 = new Employee(103, "Tonu",  55000, "HR");
-Employee e4 = new Employee(104, "Ponu",  91000, "Finance");
-Employee e5 = new Employee(105, "Gonu",  68000, "Operations");
+Employee e1 = new Employee(101, "Sonu",  75000.0, "Engineering");
+Employee e2 = new Employee(102, "Monu",  82000.0, "Engineering");
+Employee e3 = new Employee(103, "Tonu",  55000.0, "HR");
+Employee e4 = new Employee(104, "Ponu",  91000.0, "Finance");
+Employee e5 = new Employee(105, "Gonu",  68000.0, "Operations");
 ```
 
 ---
 
-## Java Version Reference
+## Java Version Quick Reference
 
-| Version | Year | LTS? | Key Additions Covered in This Courseware |
-|---------|------|------|------------------------------------------|
-| Java 8  | 2014 | —    | Lambda, Stream API, Optional, default methods, Functional interfaces |
-| Java 11 | 2018 | ✓    | HttpClient, String methods, var in lambdas, single-file execution |
-| Java 13 | 2019 | —    | Text blocks (preview) |
-| Java 14 | 2020 | —    | Switch expressions (standard), Text blocks (standard), helpful NPE |
-| Java 17 | 2021 | ✓    | Sealed classes, Records, Pattern matching instanceof |
-| Java 21 | 2023 | ✓    | Virtual threads, Record patterns, Sequenced collections |
-| Java 24 | 2024 | —    | Finalized Loom features, primitive patterns, stable structured concurrency |
+| Version | Year | LTS | Highlights |
+|---------|------|-----|------------|
+| **Java 8** | 2014 | — | Lambdas, Streams, Optional, default methods — **courseware baseline** |
+| Java 11 | 2018 | ✓ | HttpClient, String/Files API additions |
+| Java 13/14 | 2019/20 | — | Text blocks, switch expressions |
+| Java 17 | 2021 | ✓ | Records, sealed classes, pattern matching |
+| Java 21 | 2023 | ✓ | Virtual threads, sequenced collections |
+| Java 24 | 2024 | — | Finalized Loom/Valhalla features |
 
-> **For new projects:** Use Java 21 (LTS) or Java 17 (LTS).
-> **For existing enterprise code:** Java 8 or Java 11 are still very common.
-> **This courseware:** Java 8 baseline so everything compiles on any modern JDK.
+> **Which JDK to install?** JDK 21 (LTS). It runs all Java 8 code perfectly and gives you access to everything up to Java 21.
 
 ---
 
-## Tools and Setup
+## Setup in 3 Steps
 
-| Tool | Purpose | Where to get |
-|------|---------|--------------|
-| JDK 17 or 21 | Java compiler and runtime | https://adoptium.net |
-| IntelliJ IDEA Community | IDE (recommended) | https://www.jetbrains.com/idea/download |
-| Eclipse IDE for Java | Alternative IDE | https://www.eclipse.org/downloads |
-| Maven (bundled in IDE) | Build tool — needed later for Spring Boot | — |
+```bash
+# 1. Download JDK 21 from https://adoptium.net  and install it
 
-> Setup instructions with screenshots are in `01_Introduction_and_Setup.md`.
+# 2. Verify
+java -version       # should print: openjdk 21...
+javac -version      # should print: javac 21...
 
----
+# 3. Open Module 01 and follow along
+```
 
-## Key References
-
-- [Oracle Java 8 API Documentation](https://docs.oracle.com/javase/8/docs/api/)
-- [Oracle Java Tutorials](https://docs.oracle.com/javase/tutorial/)
-- [Baeldung Java Guides](https://www.baeldung.com) — practical examples
-- *Java: The Complete Reference* — Herbert Schildt
-- *Effective Java* — Joshua Bloch (read after completing this courseware)
+Full setup guide with screenshots → `01_Introduction_and_Setup.md`
